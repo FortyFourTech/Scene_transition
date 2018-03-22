@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SceneManagement {
     public class FAGameScene : GameScene {
-        [SerializeField] GameController gameController;
+        // [SerializeField] GameController gameController;
 
         private new FAGameState _state = new FAGameState();
 
@@ -22,33 +22,30 @@ namespace SceneManagement {
                 mSceneObject.transform.localScale = _state.scale;
 
                 // setup finish cube
-                gameController.SetupFinishPosition(_state.finishPosition);
+                // gameController.SetupFinishPosition(_state.finishPosition);
             }
         }
 
-        private void Update() {
-            
-        }
         private void Awake() {
-            GameController.NewGameEvent += GameController_NewGameEvent;
+            // GameController.NewGameEvent += GameController_NewGameEvent;
         }
 
         private void OnDestroy() {
-            GameController.NewGameEvent -= GameController_NewGameEvent;
+            // GameController.NewGameEvent -= GameController_NewGameEvent;
         }
 
-        private void GameController_NewGameEvent(GameEvent obj) {
-            switch (obj) {
-                case GameEvent.GAMEOVER:
-                    _state.gameResult = GameResult.failed;
-                    returnToCaller();
-                    break;
-                case GameEvent.WINGAME:
-                    _state.gameResult = GameResult.succeeded;
-                    returnToCaller();
-                    break;
-                default: break;
-            }
-        }
+        // private void OnGameEvent(GameEvent obj) {
+        //     switch (obj) {
+        //         case GameEvent.GAMEOVER:
+        //             _state.gameResult = GameResult.failed;
+        //             returnToCaller();
+        //             break;
+        //         case GameEvent.WINGAME:
+        //             _state.gameResult = GameResult.succeeded;
+        //             returnToCaller();
+        //             break;
+        //         default: break;
+        //     }
+        // }
     }
 }
