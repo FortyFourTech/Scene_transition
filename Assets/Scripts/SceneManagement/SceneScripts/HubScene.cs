@@ -69,10 +69,10 @@ public class HubScene : MonoBehaviour, ICallableScene {
         var state = st as GameState;
         if (state != null) {
 
-            Interface.InterfaceManager interfaceManager = FindObjectOfType<Interface.InterfaceManager>();
+            // Interface.InterfaceManager interfaceManager = FindObjectOfType<Interface.InterfaceManager>();
             //Отправляем интерфейсу результат взлома
-            if (interfaceManager != null)
-                interfaceManager.SetHackingGameState(state.gameResult);
+            // if (interfaceManager != null)
+            //     interfaceManager.SetHackingGameState(state.gameResult);
 
             if (state.gameResult == GameResult.succeeded)
                 this.DebugLog("game succeed");          

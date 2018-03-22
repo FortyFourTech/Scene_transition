@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SceneManagement {
     public class ShooterScene : GameScene {
         [SerializeField]
-        private ARShooter.GameManager _gameManager;
+        // private ARShooter.GameManager _gameManager;
 
         public override void SetState(SceneState st) {
             if (st != null) {
@@ -16,8 +16,8 @@ namespace SceneManagement {
                 //mSceneObject.transform.rotation = _state.rotation;
                 //mSceneObject.transform.localScale = _state.scale;
 
-                _gameManager.ARCamera = Camera.main;
-                _gameManager.StartGame();
+                // _gameManager.ARCamera = Camera.main;
+                // _gameManager.StartGame();
             }
         }
 
